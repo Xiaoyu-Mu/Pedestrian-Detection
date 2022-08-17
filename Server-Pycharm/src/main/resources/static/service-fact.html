@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object Detection</title>
+
+    <!-- ::::::::::::::All CSS Files here :::::::::::::: -->
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/dialog.css">
+    <style>
+        .mask01{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 578px;
+            background: rgba(0,0,0,0.4);
+            z-index: 100;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="main-wrapper">
+
+        <!-- .....:::::: Start Header Section :::::.... -->
+        <header style="background: #FF9900" class="header-section d-none d-lg-block">
+
+            <!-- Start Header Bottom -->
+            <div class="header-bottom sticky-header">
+                <div class="container">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-auto">
+                            <!-- Start Header Logo -->
+                            <div class="logo"><a href="index.html"><img src="assets/images/logo/detect_logo.jpg" alt=""></a>
+                            </div>
+                            <!-- End Header Logo -->
+                        </div>
+                        <div class="col-auto">
+                            <!-- Start Header Logo -->
+                            <ul class="header-nav">
+                                <li><a href="index.html">Home</a></li>
+                                <li class="has-dropdown">
+                                    <a href="service-list.html">Detect</a>
+                                    <ul class="submenu">
+                                        <li><a href="service-list.html">Image detection</a></li>
+                                        <li><a href="service-details.html">Detection result</a></li>
+                                        <li><a href="service-fact.html">Real-time detection</a></li>
+                                    </ul>
+                                </li>
+                                <li style="margin-right: 350px" class="has-dropdown">
+                                    <a href="blog-details.html">Project Introduction</a>
+                                </li>
+                            </ul>
+                            <!-- End Header Logo -->
+                        </div>
+                        <div class="col-auto">
+                            <!-- Start Header Social Link -->
+                            <ul class="social-link social-link-white">
+                                <li><a target="_blank" href=""><i class="icofont-instagram"></i></a>
+                                </li>
+                                <li><a target="_blank" href=""><i class="icofont-twitter"></i></a>
+                                </li>
+                                <li><a target="_blank" href=""><i class="icofont-linkedin"></i></a></li>
+                            </ul>
+                            <!-- Start Header Social Link -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Header Bottom -->
+        </header>
+        <!-- .....:::::: End Header Section :::::.... -->
+
+        <!-- .....:::::: Start Mobile Header Section :::::.... -->
+        <div style="background: #FF9900" class="mobile-header d-block d-lg-none">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col">
+                        <div class="mobile-logo">
+                            <a href="index.html"><img src="assets/images/logo/detect_logo.jpg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mobile-action-link text-end">
+                            <a href="#mobile-menu-offcanvas" class="offcanvas-toggle offside-menu"><i class="icofont-navigation-menu"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .....:::::: Start MobileHeader Section :::::.... -->
+
+        <!--  Start Offcanvas Mobile Menu Section -->
+        <div id="mobile-menu-offcanvas" class="offcanvas offcanvas-rightside offcanvas-mobile-menu-section">
+            <!-- Start Offcanvas Header -->
+            <div class="offcanvas-header text-right">
+                <button class="offcanvas-close"><i class="icofont-close-line"></i></button>
+            </div> <!-- End Offcanvas Header -->
+            <!-- Start Offcanvas Mobile Menu Wrapper -->
+            <div class="offcanvas-mobile-menu-wrapper">
+                <!-- Start Mobile Menu  -->
+                <div class="mobile-menu-bottom">
+                    <!-- Start Mobile Menu Nav -->
+                    <div class="offcanvas-menu">
+                        <ul>
+                            <li>
+                                <a href="index.html"><span>Home</span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span>Detect</span></a>
+                                <ul class="mobile-sub-menu">
+                                    <li><a href="service-list.html">Image detection</a></li>
+                                    <li><a href="service-details.html">Detection result</a></li>
+                                    <li><a href="service-fact.html">Real-time detection</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="blog-details.html"><span>Project Introduction</span></a>
+                            </li>
+                        </ul>
+                    </div> <!-- End Mobile Menu Nav -->
+                </div> <!-- End Mobile Menu -->
+
+                <!-- Start Mobile contact Info -->
+                <div class="mobile-contact-info text-center">
+                    <ul class="social-link social-link-white">
+                        <li><a target="_blank" href=""><i class="icofont-instagram"></i></a>
+                        </li>
+                        <li><a target="_blank" href=""><i class="icofont-twitter"></i></a>
+                        </li>
+                        <li><a target="_blank" href=""><i class="icofont-linkedin"></i></a></li>
+                    </ul>
+                </div>
+                <!-- End Mobile contact Info -->
+
+            </div> <!-- End Offcanvas Mobile Menu Wrapper -->
+        </div>
+        <!-- ...:::: End Offcanvas Mobile Menu Section:::... -->
+
+        <!-- .....:::::: Start Breadcrumb Section :::::.... -->
+        <div class="breadcrumb-section">
+            <div class="breadcrumb-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="content">
+                                <h2 class="title">Our Services</h2>
+                                <ol class="breadcrumb-link">
+                                    <li><a href="service-list.html">Service</a></li>
+                                    <li class="active" aria-current="page">Services List</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .....:::::: End Breadcrumb Section :::::.... -->
+
+        <!-- .....:::::: Start Service  Section :::::.... -->
+        <div class="service-section section-top-space">
+            <div class="container">
+                <div class="service-display-wrapper">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Start Service Single Item -->
+                            <div style="margin-bottom: 150px" class="service-single-item">
+                                <div class="icon">
+                                    <img class="img-fluid" src="assets/images/icons/working-process-icon-2.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <h4 class="title" style="margin-bottom: 37px">Real-time detection</h4>
+                                    <a id="real-detect" class="btn btn-sm btn-outline-primary text-uppercase">
+                                        <span><i class="icofont-double-right icon-space-left"></i> detect <i class="icofont-double-left icon-space-left"></i></span> </a>
+                                </div>
+                            </div>
+                            <!-- End Service Single Item -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- .....:::::: End Service Section :::::.... -->
+
+        <!-- .....:::::: Start Footer Section :::::.... -->
+        <footer class="footer-section footer-bg">
+            <!-- Start Footer Bottom -->
+            <div class="footer-bottom ">
+                <div class="container">
+                    <div class="row justify-content-md-between justify-content-center align-items-center flex-column-reverse flex-md-row">
+                        <div class="col-auto">
+                            <div class="footer-bottom-left">
+                                <div class="footer-copyright">
+                                    <p class="copyright-text">&copy; 2022 <a href="index.html">Pedestrian Detection</a> Made
+                                        with <i class="icofont-heart"></i> by <a href="" target="_blank">Xiaoyu Mu</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="footer-bottom-right">
+                                <ul class="footer-soacial">
+                                    <li><a href="" target="_blank">Instagram</a></li>
+                                    <li><a href="" target="_blank">Twitter</a></li>
+                                    <li><a href="" target="_blank">Linkedin</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Start Footer Bottom -->
+        </footer>
+        <!-- .....:::::: End Footer Section :::::.... -->
+    </main>
+
+    <!-- material-scrolltop button -->
+    <button class="material-scrolltop" type="button"></button>
+    <div class="container01">
+        <div>
+            <button style="display: none" class="togglemodal0101" id="togglemodal0101" onclick="model01()">Trigger mask layer</button>
+        </div>
+        <div class="modal01">
+            <div class="modal01-header">
+                <p class="title">Loading model...</p>
+            </div>
+            <div class="modal01-content">
+                <div style="margin-top: 20px;margin-left: 25px">
+                    <p style="font-size: 16px">Do not do anything else while the model is running! Please be patient......</p>
+                </div>
+            </div>
+            <div style="display: none" class="modal01-footer">
+                <button id="dialog-close" class="close btn" onclick="model02()">Close</button>
+            </div>
+        </div>
+        <div class="mask01"></div>
+    </div>
+</body>
+<script src="assets/js/vendor/vendor.min.js"></script>
+<script src="assets/js/plugins/plugins.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/myjs/service-fact.js"></script>
+</html>
